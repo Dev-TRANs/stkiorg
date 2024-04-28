@@ -4,10 +4,10 @@ import transLogo from "../assets/TRANs.svg"
 const barcodeWidth: number[] = [ 1, 1, 4, 2, 1, 2, 1, 2, 4, 1, 1, 2, 2, 4, 1, 2, 1, 1, 1, 4, 2, 1, 1 ]
 ---
 <div class="h-screen sm:h-halfscreen bg-black relative">
-    <div class="h-full flex absolute right-10 [&>*:nth-child(odd)]:bg-cyan-500 [&>*:nth-child(even)]:bg-black [&>*]:animate-increase">
+    <div class="h-full flex absolute right-10 [&>*:nth-child(odd)]:bg-cyan-500 [&>*:nth-child(odd)]:text-cyan-500 [&>*:nth-child(even)]:bg-black [&>*:nth-child(even)]:bg-black [&>*:nth-child(even)]:text-black [&>*]:animate-increase">
         {
             barcodeWidth.map((width: number) => {
-                return <div class={`w-${width}`}></div>
+                return <div>{"|".repeat(width)}</div>
             })
         }
     </div>
