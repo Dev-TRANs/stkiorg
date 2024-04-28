@@ -14,7 +14,9 @@ const { siteName, domain }: Props = Astro.props;
     >
         {siteName}
     </th>
-    <a href={`https://${domain}/`}>
-        <td class="px-6 py-4 underline"> {domain} </td>
-    </a>
+    <td class="px-6 py-4 underline">
+        <a href={`https://${domain}/`}>
+             {domain} 
+        </a>
+    </td>
 </tr>
