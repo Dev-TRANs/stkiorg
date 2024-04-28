@@ -1,0 +1,22 @@
+---
+import transLogo from "../assets/TRANs.svg"
+
+const barcodeWidth: number[] = [ 1, 1, 4, 2, 1, 2, 1, 2, 4, 1, 1, 2, 2, 4, 1, 2, 1, 1, 1, 4, 2, 1, 1 ]
+---
+<div class="h-screen sm:h-halfscreen bg-black relative">
+    <div class="h-full flex absolute right-10 [&>*:nth-child(odd)]:bg-cyan-500 [&>*:nth-child(even)]:bg-black [&>*]:animate-increase">
+        {
+            barcodeWidth.map((width: number) => {
+                return <div class={`w-${width}`}></div>
+            })
+        }
+    </div>
+    <div class="h-full flex flex-col justify-center absolute left-0 sm:left-20 gap-4 [&>*]:text-cyan-500 [&>*]:bg-black [&>*]:px-5 [&>*]:w-fit">
+        <div class="font-ZenOldMincho text-base sm:text-lg">生徒会・学生団体共通ドメイン</div>
+        <div class="font-CourierPrime text-5xl sm:text-8xl">stki.org</div>
+        <div class="font-CourierPrime text-base sm:text-lg">by <a href="https://trans.stki.org/"><span class="font-AllertaStencil">TRANs</span></a> >> <a href="http://discord.gg/invite/wAZdbqpjWW"><span class="underline">Inquiry</span></a></div>
+    </div>
+    <div class="w-full flex flex-col items-center absolute bottom-10">
+        <div class="text-white material-symbols-outlined text-4xl animate-bounce">stat_minus_1</div>
+    </div>
+</div>

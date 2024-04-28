@@ -1,0 +1,97 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import SitesRow from "../components/SitesRow.astro"
+
+const sites: {
+  siteName: string;
+  domain: string;
+}[] = [
+  {
+    siteName: "TRANs（生徒会情報機構）",
+    domain: "trans.stki.org"
+  },
+  {
+    siteName: "能登半島地震・学生による支援募金プロジェクト（NSF）",
+    domain: "noto.stki.org"
+  },
+  {
+    siteName: "日本中高生協議会",
+    domain: "jsc.stki.org"
+  },
+  {
+    siteName: "近畿生徒会交流会",
+    domain: "k-scem.stki.org"
+  },
+];
+---
+
+<Layout title="Welcome to Astro.">
+	<Hero />
+	<div class="mx-20">
+		<div class="mt-10 w-full text-center text-3xl font-Inter font-thin">
+			About
+		</div>
+		<div class="mt-10 font-NotoSansJP text-gray-500 font-thin text-center">
+			<p>
+				<span class="text-black">stki.org</span>は、当団体<span
+					class="text-black">TRANs</span
+				>（生徒会情報機構）の所有するドメインです。
+			</p>
+			<p>
+				当団体では、<span class="text-black">生徒会団体</span>や<span
+					class="text-black">生徒会</span
+				>、<span class="text-black">学生団体</span
+				>向けにこのドメインの機能を提供しております。
+			</p>
+			<p class="mt-5">
+				<a href="https://note.com/kombumori/n/ncdca90824365">
+					<span class="text-black underline">もっと知る</span>
+				</a>
+			</p>
+		</div>
+		<div class="mt-10 w-full text-center text-3xl font-Inter font-thin">
+			Use Cases
+		</div>
+		<div class="mt-10 w-full text-center text-2xl font-Inter font-thin">
+			Sites
+		</div>
+		<div class="mt-5 relative overflow-x-auto">
+			<table
+				class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+			>
+				<thead
+					class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+				>
+					<tr>
+						<th scope="col" class="px-6 py-3"> Site Name </th>
+						<th scope="col" class="px-6 py-3"> Domain </th>
+					</tr>
+				</thead>
+				<tbody>
+					{
+						sites.map((site) => {
+							return <SitesRow {...site}/>
+						})
+					}
+				</tbody>
+			</table>
+		</div>
+		<div class="mt-10 w-full text-center text-2xl font-Inter font-thin">
+			Others
+		</div>
+		<div class="mt-5 font-Inter font-thin">
+			<p class="w-full text-center">BlueSky, Email, etc...</p>
+		</div>
+		<div class="mt-10 w-full text-center text-3xl font-Inter font-thin">
+			Inquiry
+		</div>
+		<div class="mt-10 mb-20 font-NotoSansJP text-gray-500 font-thin text-center">
+			<p>
+				<a href="http://discord.gg/invite/wAZdbqpjWW">
+					<span class="text-black underline">Discordサーバー</span>
+				</a>からお問合せください。
+			</p>
+		</div>
+	</div>
+</Layout>
