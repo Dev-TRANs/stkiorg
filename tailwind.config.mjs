@@ -22,6 +22,9 @@ export default {
 			},
 			animation: {
 				increase: "increase 1.5s"
+			},
+			fontSize: {
+				xxs: ['0.4375rem', '0.625rem']
 			}
 		},
 	},
