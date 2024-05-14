@@ -5,7 +5,7 @@ export default {
 	theme: {
 		extend: {
 			height: {
-				screen: ['100vh', '100dvh']
+				screen: ['100vh', '100svh']
 			},
 			fontFamily: {
 				Inter: ['Inter', 'sans-serif'],
