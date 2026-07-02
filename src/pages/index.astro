@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import SitesRow from "../components/SitesRow.astro"
+import SiteCard from "../components/SiteCard.astro"
 
 const sites: {
   siteName: string;
@@ -67,7 +68,7 @@ const sites: {
 		<div class="mt-10 w-full text-center text-2xl font-Inter font-light">
 			Sites
 		</div>
-		<div class="mt-5 relative overflow-x-auto">
+		<div class="mt-5 relative overflow-x-auto hidden md:block">
 			<table
 				class="m-auto max-w-5xl w-full text-xxs sm:text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
 			>
@@ -87,6 +88,13 @@ const sites: {
 					}
 				</tbody>
 			</table>
+		</div>
+		<div class="mt-5 py-2 flex flex-col items-center gap-y-4 overflow-x-auto md:hidden">
+			{
+				sites.map((site) => {
+					return <SiteCard {...site}/>
+				})
+			}
 		</div>
 		<div class="mt-10 w-full text-center text-2xl font-Inter font-light">
 			Others
