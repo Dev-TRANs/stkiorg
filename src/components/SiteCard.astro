@@ -16,7 +16,7 @@ const pageText = await pageResponse.text();
 const root = parse(pageText);
 const description = root.querySelector('meta[name="description"]')?.getAttribute("content");
 ---
-<div class="w-5/6 max-w-md border border-gray-200 rounded-lg shadow-sm">
+<div class="border border-gray-200 rounded-lg shadow-sm">
     <a class="p-5 block" href={`https://${domain}/`}>
         <h5 class="text-md font-semibold tracking-tight text-gray-900">{siteName}</h5>
         <p class="font-light text-gray-700 underline">{domain}</p>
