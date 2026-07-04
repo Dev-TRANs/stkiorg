@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import SitesRow from "../components/SitesRow.astro"
+import SiteCard from "../components/SiteCard.astro"
 
 const sites: {
   siteName: string;
@@ -67,26 +68,14 @@ const sites: {
 		<div class="mt-10 w-full text-center text-2xl font-Inter font-light">
 			Sites
 		</div>
-		<div class="mt-5 relative overflow-x-auto">
-			<table
-				class="m-auto max-w-5xl w-full text-xxs sm:text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
-			>
-				<thead
-					class="text-xxs sm:text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
-				>
-					<tr>
-						<th scope="col" class="px-6 py-3"> Site Name </th>
-						<th scope="col" class="px-6 py-3"> Domain </th>
-					</tr>
-				</thead>
-				<tbody>
-					{
-						sites.map((site) => {
-							return <SitesRow {...site}/>
-						})
-					}
-				</tbody>
-			</table>
+		<div class="mt-5 flex justify-center">
+			<div class="card-grid w-full max-w-5xl px-6 font-NotoSansJP md:px-0">
+				{
+					sites.map((site) => {
+						return <SiteCard {...site}/>
+					})
+				}
+			</div>
 		</div>
 		<div class="mt-10 w-full text-center text-2xl font-Inter font-light">
 			Others
@@ -118,3 +107,11 @@ const sites: {
 		</div>
 	</div>
 </Layout>
+
+<style>
+	.card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+		gap: 1rem;
+	}
+</style>
